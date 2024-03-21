@@ -7,11 +7,46 @@
     <title>Document</title>
     <style>
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
+        font-family: initial, sans-serif;
+        padding: 20px;
+        color: #333;
+        background-color: rgb(255, 255, 255);
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(59, 59, 59);
+        animation: slideInDown 1s ease-in-out;
+      }
+
+      @keyframes slideInDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #000000;
+        animation: slideInDown 1s ease-in-out;
+        line-height: 1.5;
       }
 
       button {
@@ -23,16 +58,71 @@
         cursor: pointer;
         font-size: 16px;
         font-weight: bold;
+        display: block;
+        margin: 20px auto;
+        animation: pulse 1s infinite;
       }
 
       button:hover {
         background-color: #0056b3;
       }
-    </style>
 
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
     <script src="script.js" defer></script>
   </head>
   <body>
-    <button>Checkout</button>
+    <h1>&bull; Welcome to Our Website!</h1>
+    <p>
+      At Our Company, we're dedicated to providing you with the best products
+      and services and a seamless shopping experience. Whether you're looking
+      for product or service, we've got you covered.
+    </p>
+
+    <h1>&bull; Why Choose Us?</h1>
+    <p>
+      Quality Products and Services: We ensure that every product and service we
+      offer meets the highest standards of quality.<br />
+      Great Prices: Enjoy competitive prices on all our products and
+      services.<br />
+      Secure Payment: We use Stripe, a trusted and secure payment gateway, to
+      process your payments.<br />
+      Fast Shipping and Service: We strive to deliver your orders promptly and
+      provide quick customer service.
+    </p>
+
+    <h1>&bull; Our Products/Services</h1>
+    <p>
+      Explore our wide range of products and services, including:<br />
+      &bull; Product and Service Category 1<br />
+      &bull; Product and Service Category 2<br />
+      &bull; Product and Service Category 3
+    </p>
+
+    <h1>&bull; Easy Payment with Stripe</h1>
+    <p>
+      Shopping with us is easy and secure, thanks to our integration with
+      Stripe. Stripe allows you to pay using your credit card, ensuring a smooth
+      checkout experience.
+    </p>
+
+    <h1>&bull; Customer Satisfaction</h1>
+    <p>
+      Your satisfaction is our top priority. If you have any questions or
+      concerns, feel free to contact our customer support team. We're here to
+      help!
+    </p>
+
+    <button>Shop Now</button>
   </body>
 </html>

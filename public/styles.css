@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .container {
@@ -13,9 +14,12 @@ body {
 }
 
 h3 {
+  font-size: 100px;
   color: #363e3b;
+  margin-bottom: 20px;
 }
 
 p {
   color: #666;
+  margin-top: 20px;
 }

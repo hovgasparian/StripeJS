@@ -9,11 +9,12 @@ button.addEventListener('click', () => {
       items: [
         { id: 1, quantity: 239 },
         { id: 2, quantity: 57 },
+        { id: 3, quantity: 26 },
       ],
     }),
   })
     .then((res) => {
-      if (res.ok) return res.json();
+      if (res) return res.json();
       return res.json().then((json) => Promise.reject(json));
     })
     .then(({ url }) => {
