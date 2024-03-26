@@ -7,76 +7,35 @@
     <title>Document</title>
     <style>
       body {
-        font-family: initial, sans-serif;
-        padding: 20px;
-        color: #333;
-        background-color: #e0e0e0;
-        animation: fadeIn 1s ease-in-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+        padding: 40px;
+        background-color: #ebebeb;
       }
 
       h1 {
         text-align: center;
-        margin-bottom: 20px;
         color: rgb(59, 59, 59);
-        animation: slideInDown 1s ease-in-out;
-      }
-
-      @keyframes slideInDown {
-        from {
-          transform: translateY(-50px);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
       }
 
       p {
         text-align: center;
-        margin-bottom: 20px;
         color: #000000;
-        animation: slideInDown 1s ease-in-out;
         line-height: 1.5;
       }
 
       button {
-        padding: 10px 20px;
+        padding: 15px 20px;
         background-color: #007bff;
         color: #ffffff;
         border: none;
         border-radius: 5px;
-        cursor: pointer;
         font-size: 16px;
         font-weight: bold;
         display: block;
         margin: 20px auto;
-        animation: pulse 1s infinite;
       }
 
       button:hover {
         background-color: #0056b3;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.05);
-        }
-        100% {
-          transform: scale(1);
-        }
       }
     </style>
     <script src="script.js" defer></script>

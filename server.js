@@ -3,11 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
-const endpointSecret =
-  'whsec_54b2d977be728a37c169fdb2c069d98ee4a35bfe3595e9e3dfb4a03ef033888b';
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const stripe = require('stripe')(
   `sk_test_51OwKEk02OpqEY43W2Xyq75BgX8g8IwOvkk8ISvNdXjRj9wO0vGAZCjPATcGuPqU0u6abqL9kICjCYvXn6YuPC3BD001uZoaLzR`
@@ -64,33 +62,5 @@ app.post('/create-checkout-session', async (req, res) => {
   }
 });
 
-app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
-  let event = req.body;
-
-  if (endpointSecret) {
-    const signature = req.headers['stripe-signature'];
-    try {
-      event = stripe.webhooks.constructEvent(
-        req.body,
-        signature,
-        endpointSecret
-      );
-    } catch (err) {
-      console.log(`Webhook signature verification failed.`, err.message);
-      return res.sendStatus(400);
-    }
-  }
-
-  switch (event.type) {
-    case 'payment_intent.succeeded':
-      const paymentIntent = event.data.object;
-      console.log(`PaymentIntent for ${paymentIntent.amount} was successful!`);
-      break;
-    default:
-      console.log(`Unhandled event type ${event.type}.`);
-  }
-  res.send();
-});
-
-const PORT = process.env.SECRET_PORT || 4242;
-app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
+const PORT = process.env.SECRET_PORT || 3000;
+app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
